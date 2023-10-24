@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Animate CSS</title>
+    <link
+      href="/assets-6/vendor/bootstrap-5.2.3-dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="/assets-6/vendor/fontawesome-free-6.4.2-web/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="/assets-6/vendor/animate.css/animate.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body style="overflow-x: hidden">
+    <div class="container-fluid">
+      <div class="row mt-5">
+        <div class="col-12">
+          <div class="position-relative">
+            <h1 id="title" class="text-center">Animate CSS</h1>
+            <h3 class="text-center text-muted animate__animated animate__flash">
+              membuat animasi dengan mudah
+            </h3>
+          </div>
+          <hr />
+          <div class="d-flex justify-content-center flex-wrap gap-2">
+            <button
+              class="btn btn-primary"
+              onclick="animateCSS('#title', 'bounce');"
+            >
+              bounce
+            </button>
+            <button
+              class="btn btn-primary"
+              onclick="animateCSS('#title', 'flash');"
+            >
+              flash
+            </button>
+            <button
+              class="btn btn-primary"
+              onclick="animateCSS('#title', 'pulse');"
+            >
+              pulse
+            </button>
+            <button
+              class="btn btn-primary"
+              onclick="animateCSS('#title', 'swing');"
+            >
+              swing
+            </button>
+            <button
+              class="btn btn-primary"
+              onclick="animateCSS('#title', 'tada');"
+            >
+              tada
+            </button>
+            <button
+              class="btn btn-primary"
+              onclick="animateCSS('#title', 'wobble');"
+            >
+              wobble
+            </button>
+            <button
+              class="btn btn-primary"
+              onclick="animateCSS('#title', 'jello');"
+            >
+              jello
+            </button>
+            <button
+              class="btn btn-primary"
+              onclick="animateCSS('#title', 'backInDown');"
+            >
+              backInDown
+            </button>
+            <button
+              class="btn btn-primary"
+              onclick="animateCSS('#title', 'backOutDown');"
+            >
+              backOutDown
+            </button>
+            <button
+              class="btn btn-primary"
+              onclick="animateCSS('#title', 'bounceIn');"
+            >
+              bounceIn
+            </button>
+            <button
+              class="btn btn-primary"
+              onclick="animateCSS('#title', 'bounceOut');"
+            >
+              bounceOut
+            </button>
+            <button
+              class="btn btn-primary"
+              onclick="animateCSS('#title', 'flip');"
+            >
+              flip
+            </button>
+            <button
+              class="btn btn-primary"
+              onclick="animateCSS('#title', 'lightSpeedInRight');"
+            >
+              lightSpeedInRight
+            </button>
+            <button
+              class="btn btn-primary"
+              onclick="animateCSS('#title', 'rotateIn');"
+            >
+              rotateIn
+            </button>
+            <button
+              class="btn btn-primary"
+              onclick="animateCSS('#title', 'rotateOut');"
+            >
+              rotateOut
+            </button>
+            <button
+              class="btn btn-primary"
+              onclick="animateCSS('#title', 'rollIn');"
+            >
+              rollIn
+            </button>
+            <button
+              class="btn btn-primary"
+              onclick="animateCSS('#title', 'zoomIn');"
+            >
+              zoomIn
+            </button>
+            <button
+              class="btn btn-primary"
+              onclick="animateCSS('#title', 'zoomOut');"
+            >
+              zoomOut
+            </button>
+            <button
+              class="btn btn-primary"
+              onclick="animateCSS('#title', 'slideInDown');"
+            >
+              slideInDown
+            </button>
+            <button
+              class="btn btn-primary"
+              onclick="animateCSS('#title', 'slideOutDown');"
+            >
+              slideOutDown
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="bootstrap-5.2.3-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets-6/vendor/fontawesome-free-6.4.2-web/js/all.min.js"></script>
+
+    <script>
+      const animateCSS = (element, animation, prefix = "animate__") =>
+        // We create a Promise and return it
+        new Promise((resolve, reject) => {
+          const animationName = `${prefix}${animation}`;
+          const node = document.querySelector(element);
+
+          node.classList.add(`${prefix}animated`, animationName);
+
+          // When the animation ends, we clean the classes and resolve the Promise
+          function handleAnimationEnd(event) {
+            event.stopPropagation();
+            node.classList.remove(`${prefix}animated`, animationName);
+            resolve("Animation ended");
+          }
+
+          node.addEventListener("animationend", handleAnimationEnd, {
+            once: true,
+          });
+        });
+    </script>
+  </body>
+</html>

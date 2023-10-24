@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sweet Alert 2</title>
+    <link href="bootstrap-5.2.3-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link
+      href="/assets-6/vendor/sweetalert2/dist/sweetalert2.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="/assets/vendor/fontawesome-free-6.4.2-web/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="/assets-6/vendor/animate.css/animate.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <div class="row mt-3">
+        <div class="col-12">
+          <h1>Sweet Alert 2</h1>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Title</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>A basic message</td>
+                <td>
+                  <button onclick="alert1();" class="btn btn-primary">
+                    Try
+                  </button>
+                </td>
+              </tr>
+
+              <tr>
+                <th scope="row">2</th>
+                <td>A title with a text under</td>
+                <td>
+                  <button onclick="alert2();" class="btn btn-primary">
+                    Try
+                  </button>
+                </td>
+              </tr>
+
+              <tr>
+                <th scope="row">3</th>
+                <td>
+                  A modal with a title, an error icon, a text, and a footer
+                </td>
+                <td>
+                  <button onclick="alert3();" class="btn btn-primary">
+                    Try
+                  </button>
+                </td>
+              </tr>
+
+              <tr>
+                <th scope="row">4</th>
+                <td>A modal window with a long content inside:</td>
+                <td>
+                  <button onclick="alert4();" class="btn btn-primary">
+                    Try
+                  </button>
+                </td>
+              </tr>
+
+              <tr>
+                <th scope="row">5</th>
+                <td>Custom HTML description and buttons with ARIA labels</td>
+                <td>
+                  <button onclick="alert5();" class="btn btn-primary">
+                    Try
+                  </button>
+                </td>
+              </tr>
+
+              <tr>
+                <th scope="row">6</th>
+                <td>A dialog with three buttons</td>
+                <td>
+                  <button onclick="alert6();" class="btn btn-primary">
+                    Try
+                  </button>
+                </td>
+              </tr>
+
+              <tr>
+                <th scope="row">7</th>
+                <td>A custom positioned dialog</td>
+                <td>
+                  <button onclick="alert7();" class="btn btn-primary">
+                    Try
+                  </button>
+                </td>
+              </tr>
+
+              <tr>
+                <th scope="row">8</th>
+                <td>Custom animation with Animate.css</td>
+                <td>
+                  <button onclick="alert8();" class="btn btn-primary">
+                    Try
+                  </button>
+                </td>
+              </tr>
+
+              <tr>
+                <th scope="row">9</th>
+                <td>
+                  A confirm dialog, with a function attached to the
+                  "Confirm"-button
+                </td>
+                <td>
+                  <button onclick="alert9();" class="btn btn-primary">
+                    Try
+                  </button>
+                </td>
+              </tr>
+
+              <tr>
+                <th scope="row">10</th>
+                <td>
+                  ... and by passing a parameter, you can execute something else
+                  for "Cancel"
+                </td>
+                <td>
+                  <button onclick="alert10();" class="btn btn-primary">
+                    Try
+                  </button>
+                </td>
+              </tr>
+
+              <tr>
+                <th scope="row">11</th>
+                <td>A message with a custom image</td>
+                <td>
+                  <button onclick="alert11();" class="btn btn-primary">
+                    Try
+                  </button>
+                </td>
+              </tr>
+
+              <tr>
+                <th scope="row">12</th>
+                <td>A message with auto close timer</td>
+                <td>
+                  <button onclick="alert12();" class="btn btn-primary">
+                    Try
+                  </button>
+                </td>
+              </tr>
+
+              <tr>
+                <th scope="row">13</th>
+                <td>AJAX request example</td>
+                <td>
+                  <button onclick="alert13();" class="btn btn-primary">
+                    Try
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script src="bootstrap-5.2.3-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets-6/vendor/sweetalert2/dist/sweetalert2.all.js"></script>
+    <script src="/assets-6/vendor/fontawesome-free-6.4.2-web/js/all.min.js"></script>
+
+    <script>
+      function alert1() {
+        Swal.fire("A basic message");
+      }
+
+      function alert2() {
+        Swal.fire("The Internet?", "That thing is still around?", "question");
+      }
+
+      function alert3() {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Something went wrong!",
+          footer: '<a href="#">Why do I have this issue?</a>',
+        });
+      }
+
+      function alert4() {
+        Swal.fire({
+          imageUrl: "https://placeholder.pics/svg/300x1500",
+          imageHeight: 1500,
+          imageAlt: "A tall image",
+        });
+      }
+
+      function alert5() {
+        Swal.fire({
+          title: "<strong>HTML <u>example</u></strong>",
+          icon: "info",
+          html:
+            "You can use <b>bold text</b>, " +
+            '<a href="//sweetalert2.github.io">links</a> ' +
+            "and other HTML tags",
+          showCloseButton: true,
+          showCancelButton: true,
+          focusConfirm: false,
+          confirmButtonText: '<i class="fa fa-thumbs-up"></i> Great!',
+          confirmButtonAriaLabel: "Thumbs up, great!",
+          cancelButtonText: '<i class="fa fa-thumbs-down"></i>',
+          cancelButtonAriaLabel: "Thumbs down",
+        });
+      }
+
+      function alert6() {
+        Swal.fire({
+          title: "Do you want to save the changes?",
+          showDenyButton: true,
+          showCancelButton: true,
+          confirmButtonText: "Save",
+          denyButtonText: `Don't save`,
+        }).then((result) => {
+          /* Read more about isConfirmed, isDenied below */
+          if (result.isConfirmed) {
+            Swal.fire("Saved!", "", "success");
+          } else if (result.isDenied) {
+            Swal.fire("Changes are not saved", "", "info");
+          }
+        });
+      }
+
+      function alert7() {
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Your work has been saved",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      }
+
+      function alert8() {
+        Swal.fire({
+          title: "Custom animation with Animate.css",
+          showClass: {
+            popup: "animate__animated animate__fadeInDown",
+          },
+          hideClass: {
+            popup: "animate__animated animate__fadeOutUp",
+          },
+        });
+      }
+
+      function alert9() {
+        Swal.fire({
+          title: "Are you sure?",
+          text: "You won't be able to revert this!",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#3085d6",
+          cancelButtonColor: "#d33",
+          confirmButtonText: "Yes, delete it!",
+        }).then((result) => {
+          if (result.isConfirmed) {
+            Swal.fire("Deleted!", "Your file has been deleted.", "success");
+          }
+        });
+      }
+
+      function alert10() {
+        const swalWithBootstrapButtons = Swal.mixin({
+          customClass: {
+            confirmButton: "btn btn-success",
+            cancelButton: "btn btn-danger",
+          },
+          buttonsStyling: false,
+        });
+
+        swalWithBootstrapButtons
+          .fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonText: "Yes, delete it!",
+            cancelButtonText: "No, cancel!",
+            reverseButtons: true,
+          })
+          .then((result) => {
+            if (result.isConfirmed) {
+              swalWithBootstrapButtons.fire(
+                "Deleted!",
+                "Your file has been deleted.",
+                "success"
+              );
+            } else if (
+              /* Read more about handling dismissals below */
+              result.dismiss === Swal.DismissReason.cancel
+            ) {
+              swalWithBootstrapButtons.fire(
+                "Cancelled",
+                "Your imaginary file is safe :)",
+                "error"
+              );
+            }
+          });
+      }
+
+      function alert11() {
+        Swal.fire({
+          title: "Sweet!",
+          text: "Modal with a custom image.",
+          imageUrl: "https://unsplash.it/400/200",
+          imageWidth: 400,
+          imageHeight: 200,
+          imageAlt: "Custom image",
+        });
+      }
+
+      function alert12() {
+        let timerInterval;
+        Swal.fire({
+          title: "Auto close alert!",
+          html: "I will close in <b></b> milliseconds.",
+          timer: 2000,
+          timerProgressBar: true,
+          didOpen: () => {
+            Swal.showLoading();
+            const b = Swal.getHtmlContainer().querySelector("b");
+            timerInterval = setInterval(() => {
+              b.textContent = Swal.getTimerLeft();
+            }, 100);
+          },
+          willClose: () => {
+            clearInterval(timerInterval);
+          },
+        }).then((result) => {
+          /* Read more about handling dismissals below */
+          if (result.dismiss === Swal.DismissReason.timer) {
+            console.log("I was closed by the timer");
+          }
+        });
+      }
+
+      function alert13() {
+        Swal.fire({
+          title: "Submit your Github username",
+          input: "text",
+          inputAttributes: {
+            autocapitalize: "off",
+          },
+          showCancelButton: true,
+          confirmButtonText: "Look up",
+          showLoaderOnConfirm: true,
+          preConfirm: (login) => {
+            return fetch(`//api.github.com/users/${login}`)
+              .then((response) => {
+                if (!response.ok) {
+                  throw new Error(response.statusText);
+                }
+                return response.json();
+              })
+              .catch((error) => {
+                Swal.showValidationMessage(`Request failed: ${error}`);
+              });
+          },
+          allowOutsideClick: () => !Swal.isLoading(),
+        }).then((result) => {
+          if (result.isConfirmed) {
+            Swal.fire({
+              title: `${result.value.login}'s avatar`,
+              imageUrl: result.value.avatar_url,
+            });
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
